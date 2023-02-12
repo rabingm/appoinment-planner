@@ -7,9 +7,42 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit
+  handleSubmit,
 }) => {
+  const handleOnNameChange = ({ target }) => {
+    setName(target.value);
+  };
+  const handleOnPhoneChange = ({ target }) => {
+    setPhone(target.value);
+  };
+  const handleOnEmailChange = ({ target }) => {
+    setEmail(target.value);
+  };
   return (
-    ContactForm
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={name}
+        onChange={handleOnNameChange}
+        placeholder="Name"
+        required
+      />
+      <input
+        type="tel"
+        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+        value={phone}
+        onChange={handleOnPhoneChange}
+        placeholder="Phone"
+        required
+      />
+      <input
+        type="email"
+        value={email}
+        onChange={handleOnEmailChange}
+        placeholder="Email"
+        required
+      />
+      <input type="submit" />
+    </form>
   );
 };
