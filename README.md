@@ -1,4 +1,4 @@
-# Pet adoptation web application
+# Appoinment planner
 A appoinment planner application allows users to make appoinment with avaialable contacts.
 
 ## Description
